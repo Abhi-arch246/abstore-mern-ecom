@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 function Navbar() {
     const cartreducer = useSelector(state => state.cartReducer)
@@ -10,11 +11,14 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item ">
-                            <a className="nav-link text-white" href="/">Home</a>
+                            <Link className="nav-link text-white" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link className="nav-link text-white" to="/login">Login</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="/cart"><i class="fa-solid fa-cart-shopping"></i>{cartItems.length}
-                            </a>
+                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid fa-cart-shopping"></i>{cartItems.length}
+                            </Link>
                         </li>
                     </ul>
                 </div>

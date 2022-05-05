@@ -1,0 +1,18 @@
+.bgcolor {
+    background-color: #570776;
+
+}
+
+.img-class {
+    width: 700px;
+    border-radius: 5%;
+}
+
+.submit-btn {
+    background-color: #570776;
+    padding: 8px;
+    width: 70%;
+    margin-left: 50px;
+    color: white;
+    border: 0;
+}
