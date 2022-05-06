@@ -17,7 +17,7 @@ function Register() {
             pass: pass
         }
         if (pass == cpass) {
-            dispatch(registerUser())
+            dispatch(registerUser(user))
 
         } else {
             alert('Passwords doesnt match')
@@ -26,7 +26,7 @@ function Register() {
     }
 
     return (
-        <div className='row bgcolor p-5'>
+        <div className='row bgcolor px-5 pt-5'>
             <div className="col-md-6 text-center py-5">
                 <img className='img-class img-fuild' src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=996&t=st=1651744935~exp=1651745535~hmac=d4f6d78ec33831fc619d1d3eee3555a57f64a8ac5e700f2a0c17cc4942d50d2d" alt="" />
             </div>
@@ -56,6 +56,10 @@ function Register() {
                     <Link className="text-primary my-3" to="/login">Already Registered? Click here</Link>
                 </div>
             </div>
+            <footer className='pt-3 text-white'>
+                <h5>Made with ❤️ @Abhishek</h5>
+
+            </footer>
         </div>
     )
 }
