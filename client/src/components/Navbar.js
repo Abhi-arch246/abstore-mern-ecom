@@ -17,7 +17,7 @@ function Navbar() {
                             <Link className="nav-link text-white" to="/login">Login</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid fa-cart-shopping"></i>{cartItems.length}
+                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
                             </Link>
                         </li>
                     </ul>

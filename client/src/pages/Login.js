@@ -12,15 +12,16 @@ function Login() {
                 <div className="card p-2 bg-white">
                     <h2 className='mt-2' style={{ textAlign: "left", marginLeft: "40px" }}>Login</h2>
                     <form className='col-md-9 mt-5' style={{ textAlign: "left", marginLeft: "40px" }}>
-                        <div class="form-group">
+                        <div className="form-group">
                             <h5>Email address</h5>
-                            <input type="email" class="form-control" placeholder="Enter email" />
+                            <input type="email" className="form-control" placeholder="Enter email" />
                         </div>
-                        <div class="form-group mt-4">
+                        <div className="form-group mt-4">
                             <h5>Password</h5>
-                            <input type="password" class="form-control" placeholder="Password" />
+                            <input type="password" className="form-control" placeholder="Password" />
                         </div>
-                        <button type="submit" class="submit-btn mt-5">Submit</button>
+
+                        <button type="submit" className="submit-btn mt-5">Submit</button>
                         <br />
 
                     </form>

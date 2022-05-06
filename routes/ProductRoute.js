@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Product = require('../productModal')
+const Product = require('../modals/productModal')
 router.get('/getallproducts', (req, res) => {
     Product.find({}, (err, docs) => {
         if (!err)
