@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { registerUser } from '../actions/userAction'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const [name, setname] = useState('')
     const [email, setemail] = useState('')
@@ -18,6 +20,11 @@ function Register() {
         }
         if (pass == cpass) {
             dispatch(registerUser(user))
+            toast.success("Registration successful!", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 2500,
+                theme: "colored"
+            });
 
         } else {
             alert('Passwords doesnt match')
@@ -55,8 +62,9 @@ function Register() {
                     </form>
                     <Link className="text-primary my-3" to="/login">Already Registered? Click here</Link>
                 </div>
+                <ToastContainer />
             </div>
-            <footer className='pt-3 text-white'>
+            <footer className='p-3 text-white'>
                 <h5>Made with ❤️ @Abhishek</h5>
 
             </footer>

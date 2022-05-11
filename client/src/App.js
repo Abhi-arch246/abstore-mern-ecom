@@ -2,7 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min'
+
 import Navbar from './components/Navbar';
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage';
 import ProductDesc from './pages/ProductDesc';
 import CartPage from './pages/CartPage';
@@ -23,6 +25,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/user' element={<UserPage />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

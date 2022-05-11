@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export const registerUser = (user) => dispatch => {
 
     dispatch({ type: 'USER_REGISTER_REQUEST' })
@@ -22,8 +23,10 @@ export const loginUser = (user) => dispatch => {
     axios.post('/api/users/login', user)
         .then(res => {
             dispatch({ type: 'USER_LOGIN_SUCCESS' })
+
             localStorage.setItem('currentUser', JSON.stringify(res.data))
             window.location.href = '/'
+
         })
         .catch(err => {
             dispatch({ type: 'USER_LOGIN_ERROR', payload: err })

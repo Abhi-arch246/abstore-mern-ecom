@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, deleteItem } from '../actions/cartAction'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function CartPage() {
     const cartreducerstate = useSelector(state => state.cartReducer)
     const { cartItems } = cartreducerstate
@@ -35,7 +38,14 @@ function CartPage() {
                                         </select>
                                     </td>
                                     <td>{item.quantity * item.price}</td>
-                                    <td> <button className='btn btn-danger' onClick={() => dispatch(deleteItem(item))}>Delete</button></td>
+                                    <td> <button className='btn btn-danger' onClick={() => {
+                                        dispatch(deleteItem(item));
+                                        toast.error("Item deleted from the cart!", {
+                                            position: toast.POSITION.TOP_RIGHT,
+                                            autoClose: 2500,
+                                            theme: "colored"
+                                        });
+                                    }}>Delete</button></td>
                                 </tr>
                             })}
                         </tbody>
@@ -43,12 +53,13 @@ function CartPage() {
                     </table>
 
                     <h2 className='mt-5'>Subtotal: {subtotal}</h2>
-                    <div className="col-md-12 mt-5 ">
+                    <div className="col-md-12 m-5 ">
                         <button className='btn btn-dark'>Pay now</button>
 
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

@@ -4,7 +4,7 @@ import Rating from 'react-rating'
 function Product({ product }) {
     return (
 
-        <div className="col-md-2 m-5 card p-2 justify-content-center shadow-lg">
+        <div className="col-md-3 m-5 card p-3 justify-content-center shadow-lg">
             <div>
                 <Link className="text-decoration-none" to={`/product/${product._id}`}>
 

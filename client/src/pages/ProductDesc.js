@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductById } from '../actions/productAction'
 import { addToCart } from '../actions/cartAction'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function ProductDesc() {
     const { id } = useParams()
     const dispatch = useDispatch()
@@ -15,6 +17,11 @@ function ProductDesc() {
 
     function addtocart() {
         dispatch(addToCart(product, quantity))
+        toast.success("Item Added to the cart!", {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2500,
+            theme: "colored"
+        });
     }
     return (
         <div>
@@ -27,7 +34,7 @@ function ProductDesc() {
                     <h1>something is wrong</h1>
                 ) : (
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 p-4">
                             <h2 className='p-3'>{product.name}</h2>
                             <img className='rounded' src={product.image} width="520" height="650" alt="" />
                         </div>
@@ -49,6 +56,7 @@ function ProductDesc() {
                     </div>
                 )
             }
+            <ToastContainer />
 
         </div>
     )

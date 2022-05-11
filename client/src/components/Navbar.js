@@ -12,32 +12,32 @@ function Navbar() {
                 <div className="logo">
                     <Link className='navbar-brand text-white bold' to="/">Ab Shop</Link>
                 </div>
-                <div className="menu-link pt-1">
+                <div className="menu-link pt-2">
                     <ul>
                         <li className="nav-item ">
                             <Link className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1"></i>Home</Link>
                         </li>
-                        <li className="nav-item ">
-                            <Link className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1"></i>Orders</Link>
-                        </li>
-
 
                         {currentUser ? (
-
-                            <li className="nav-item" style={{ marginLeft: "10px" }}>
-                                <Link className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1"></i>{currentUser.name}</Link>
-                            </li>
+                            <>
+                                <li className="nav-item ">
+                                    <Link className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1"></i>Orders</Link>
+                                </li>
+                                <li className="nav-item" style={{ marginLeft: "10px" }}>
+                                    <Link className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1"></i>{currentUser.name}</Link>
+                                </li>
+                                <li className="nav-item" style={{ marginLeft: "10px" }}>
+                                    <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
+                                    </Link>
+                                </li>
+                            </>
 
 
                         ) : (
-                            <li className="nav-item" style={{ marginLeft: "10px" }}>
-                                <Link className="nav-link text-white" to="/login">Login</Link>
+                            <li className="nav-item">
+                                <Link className="nav-link text-white bg-dark" style={{ marginLeft: "10px", borderRadius: "5px" }} to="/login">Login</Link>
                             </li>
                         )}
-                        <li className="nav-item" style={{ marginLeft: "10px" }}>
-                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
-                            </Link>
-                        </li>
 
                     </ul>
                 </div>
