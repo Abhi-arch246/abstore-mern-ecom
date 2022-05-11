@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../actions/userAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function Login() {
+    const loginreducer = useSelector(state => state.loginUserReducer)
+    const { success, error } = loginreducer
     const [email, setemail] = useState('')
     const [pass, setpass] = useState('')
     const dispatch = useDispatch()
@@ -16,11 +18,7 @@ function Login() {
             pass: pass
         }
         dispatch(loginUser(user))
-        toast.success("Success Notification !", {
-            position: toast.POSITION.TOP_RIGHT,
-            autoClose: 2500,
-            theme: "colored"
-        });
+
 
     }
 
@@ -37,6 +35,20 @@ function Login() {
             <div className="col-md-4 py-5 mt-3">
                 <div className="card p-2 bg-white">
                     <h2 className='mt-2' style={{ textAlign: "left", marginLeft: "40px" }}>Login</h2>
+                    {error && (
+                        toast.error("Error Notification !", {
+                            position: toast.POSITION.TOP_RIGHT,
+                            autoClose: 2500,
+                            theme: "colored"
+                        })
+                    )}
+                    {success && (
+                        toast.success("Successful login !", {
+                            position: toast.POSITION.TOP_RIGHT,
+                            autoClose: 2500,
+                            theme: "colored"
+                        })
+                    )}
                     <form onSubmit={loginsubmit} className='col-md-9 mt-5' style={{ textAlign: "left", marginLeft: "40px" }}>
                         <div className="form-group">
                             <h5>Email address</h5>
