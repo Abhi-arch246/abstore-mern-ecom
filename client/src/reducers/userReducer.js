@@ -38,6 +38,10 @@ export const loginUserReducer = (state = {}, action) => {
             error: 'Invalid Credentials'
         }
 
+        case 'USER_LOGOUT': return {
+            ...state
+        }
+
         default: return state
     }
 }

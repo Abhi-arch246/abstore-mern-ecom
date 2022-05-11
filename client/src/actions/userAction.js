@@ -31,3 +31,12 @@ export const loginUser = (user) => dispatch => {
 
         })
 }
+
+export const logoutUser = () => dispatch => {
+    localStorage.removeItem('currentUser')
+    localStorage.removeItem('cartItems')
+
+    dispatch({ type: 'USER_LOGOUT' })
+
+    window.location.href = "/login"
+}

@@ -26,17 +26,11 @@ function HomePage() {
                             products.map(product => {
                                 return <Product key={product._id} product={product} />
                             })
+
+
+
                         )
-                    /* products.length ?
-                        (
-                            products.map(product => {
-                                return <Product key={product._id} product={product} />
-                            })
-                ) : (
-                <>
-                    <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" />
-                </>
-                ) */
+
                 }
             </div>
         </div>
