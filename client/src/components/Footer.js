@@ -7,19 +7,18 @@ function Footer() {
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <h4 class="title">Sumi</h4>
+                            <h4 class="title" style={{ marginLeft: "20px" }}>Sumi</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit, libero a molestie consectetur, sapien elit lacinia mi.</p>
                             <ul class="social-icon">
-                                <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                <a href="#" class="social"><i className="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#" class="social"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#" class="social"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#" class="social"><i class="fa-brands fa-youtube-play" aria-hidden="true"></i></a>
+                                <a href="#" class="social"><i class="fa-brands fa-google" aria-hidden="true"></i></a>
                             </ul>
                         </div>
                         <div class="col-sm-3">
-                            <h4 class="title">My Account</h4>
+                            <h4 class="title" style={{ marginLeft: "40px" }}>My Account</h4>
                             <span class="acount-icon">
                                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Wish List</a>
                                 <a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
@@ -28,7 +27,7 @@ function Footer() {
                             </span>
                         </div>
                         <div class="col-sm-3">
-                            <h4 class="title">Category</h4>
+                            <h4 class="title" style={{ marginLeft: "20px" }}>Category</h4>
                             <div class="category">
                                 <a href="#">men</a>
                                 <a href="#">women</a>
@@ -48,14 +47,14 @@ function Footer() {
                             <h4 class="title">Payment Methods</h4>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             <ul class="payment">
-                                <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-cc-amex" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-cc-paypal" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-cc-visa" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="row text-center"> © 2017. Made with  by sumi9xm.</div>
+                    <div class="text-center"> © 2022. Made with <i class="fa fa-heart"></i> by Abhishek.</div>
                 </div>
 
 

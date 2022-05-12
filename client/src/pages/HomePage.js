@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/Product'
 import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge'
-
+import Filter from '../components/Filter';
 import { getAllProducts } from '../actions/productAction'
 function HomePage() {
     const getAllProductsState = useSelector(state => state.getAllProductsReducer)
@@ -69,7 +69,8 @@ function HomePage() {
                         <span className="sr-only">Next</span>
                     </a>
                 </div> */}
-                <h2 className='mt-5'><Badge bg="secondary">Today's Top Deals</Badge></h2>
+                <h2 className='my-5'><Badge bg="secondary">Today's Top Deals</Badge></h2>
+                <Filter />
                 {
                     loading ?
                         (

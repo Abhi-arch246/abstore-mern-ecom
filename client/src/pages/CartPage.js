@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, deleteItem } from '../actions/cartAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Checkout from '../components/Checkout';
 
 function CartPage() {
     const cartreducerstate = useSelector(state => state.cartReducer)
@@ -53,10 +54,7 @@ function CartPage() {
                     </table>
 
                     <h2 className='mt-5'>Subtotal: {subtotal}</h2>
-                    <div className="col-md-12 m-5 ">
-                        <button className='btn btn-dark'>Pay now</button>
-
-                    </div>
+                    <Checkout amount={subtotal} />
                 </div>
             </div>
             <ToastContainer />

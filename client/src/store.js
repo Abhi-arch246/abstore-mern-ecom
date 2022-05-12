@@ -2,6 +2,7 @@ import { getAllProductByIdReducer, getAllProductsReducer } from "./reducers/prod
 import { combineReducers } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import { placeOrderReducer } from './reducers/orderReducer'
 import { cartReducer } from "./reducers/cartReducer";
 import { composeWithDevTools } from '@redux-devtools/extension'
 import { loginUserReducer, registerUserReducer } from "./reducers/userReducer";
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     getAllProductByIdReducer: getAllProductByIdReducer,
     cartReducer: cartReducer,
     registerUserReducer: registerUserReducer,
-    loginUserReducer: loginUserReducer
+    loginUserReducer: loginUserReducer,
+    placeOrderReducer: placeOrderReducer
 })
 
 const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []

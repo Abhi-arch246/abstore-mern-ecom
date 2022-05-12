@@ -118,3 +118,17 @@ li {
   font-size: 25px;
   padding: 10px 10px;
 }
+
+.btn_color {
+  background-color: #570776;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 90px;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;
+}
+
+.btn_color:hover {
+  background-color: blue;
+}
