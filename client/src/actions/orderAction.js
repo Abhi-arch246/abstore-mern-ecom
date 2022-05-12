@@ -9,6 +9,7 @@ export const placeOrder = (token, subtotal) => (dispatch, getState) => {
 
     axios.post("/api/orders/placeorder", { token, subtotal, currentUser, cartItems }).then(res => {
         dispatch({ type: "PLACE_ORDER_SUCCESS" })
+        console.log(res);
     }).catch(err => {
         dispatch({ type: "PLACE_ORDER_ERROR" })
     })
