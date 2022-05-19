@@ -32,7 +32,7 @@ function OrderPage() {
                         <tbody>
                             {loading && <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" />}
                             {orders && orders.map(order => {
-                                return <tr onClick={() => window.location = `/orderdesc/${order._id}`}>
+                                return <tr style={{ cursor: 'pointer' }} onClick={() => window.location = `/orderdesc/${order._id}`}>
                                     <td>{order._id}</td>
                                     <td>{order.orderAmount}</td>
                                     <td>{order.createdAt.substring(0, 10)}</td>

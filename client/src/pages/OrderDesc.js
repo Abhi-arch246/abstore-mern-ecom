@@ -13,7 +13,7 @@ function OrderDesc() {
     useEffect(() => {
         dispatch(getOrderById(orderid))
         console.log(order);
-    }, [dispatch])
+    }, [orderid])
 
     return (
         <div>

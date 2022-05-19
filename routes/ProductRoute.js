@@ -21,7 +21,31 @@ router.post('/getallproductbyid', (req, res) => {
 
     })
 }
-
 )
+
+router.post('/addreview', async (req, res) => {
+    const { review, productid, currentUser } = req.body
+
+    const product = await Product.findById({ _id: productid })
+
+    const reviewobj = {
+        name: currentUser.name,
+        userid: currentUser._id,
+        rating: review.rating,
+        comment: review.comment
+    }
+
+    product.reviews.push(reviewobj)
+
+    var rating = product.reviews.reduce((acc, x) => acc + x.rating, 0) / product.reviews.length
+    product.rating = rating
+
+    product.save(err => {
+        if (err)
+            res.send('Something went wrong')
+        else
+            res.send('Review upated successfully')
+    })
+})
 
 module.exports = router;

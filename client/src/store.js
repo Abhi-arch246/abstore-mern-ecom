@@ -1,4 +1,4 @@
-import { getAllProductByIdReducer, getAllProductsReducer } from "./reducers/productReducer";
+import { getAllProductByIdReducer, getAllProductsReducer, addProductReviewReducer } from "./reducers/productReducer";
 import { combineReducers } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
@@ -16,7 +16,8 @@ const rootReducer = combineReducers({
     loginUserReducer: loginUserReducer,
     placeOrderReducer: placeOrderReducer,
     getOrdersByUserIdReducer: getOrdersByUserIdReducer,
-    getOrderByIdReducer: getOrderByIdReducer
+    getOrderByIdReducer: getOrderByIdReducer,
+    addProductReviewReducer: addProductReviewReducer
 })
 
 const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []

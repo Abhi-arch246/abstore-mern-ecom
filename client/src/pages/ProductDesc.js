@@ -5,6 +5,8 @@ import { getProductById } from '../actions/productAction'
 import { addToCart } from '../actions/cartAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Review from '../components/Review'
+
 function ProductDesc() {
     const { id } = useParams()
     const dispatch = useDispatch()
@@ -40,9 +42,9 @@ function ProductDesc() {
                         </div>
                         <div className="col-md-6" style={{ textAlign: 'left' }}>
                             <div className="mt-4">
-                                <h3>Price: {product.price}</h3>
+                                <h4>Price: {product.price}</h4>
                                 <br />
-                                <h3>Select Quantity</h3>
+                                <h4>Select Quantity</h4>
                                 <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
                                     {[...Array(product.countInStock).keys()].map((c, i) => {
                                         return <option value={i + 1}>{i + 1}</option>
@@ -52,6 +54,8 @@ function ProductDesc() {
                                 <br />
                                 <button className='btn btn-dark mt-4' onClick={addtocart}>Add to Cart</button>
                             </div>
+                            <Review product={product} />
+
                         </div>
                     </div>
                 )
