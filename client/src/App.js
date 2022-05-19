@@ -12,6 +12,8 @@ import Login from './pages/Login'
 import Register from './pages/Register';
 import UserPage from './pages/UserPage'
 import OrderPage from './pages/OrderPage';
+import OrderDesc from './pages/OrderDesc';
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/user' element={<UserPage />} />
           <Route path='/orders' element={<OrderPage />} />
+          <Route path='/orderdesc/:orderid' element={<OrderDesc />} />
         </Routes>
         <Footer />
       </Router>

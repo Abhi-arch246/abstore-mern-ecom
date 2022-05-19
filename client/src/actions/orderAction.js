@@ -5,7 +5,7 @@ export const placeOrder = (token, subtotal) => (dispatch, getState) => {
     const currentUser = getState().loginUserReducer.currentUser
     const demoItems = getState().cartReducer.cartItems
 
-    const cartItems = new Array()
+    const cartItems = new Array();
 
     for (var i = 0; i < demoItems.length; i++) {
         var item = {
@@ -22,7 +22,7 @@ export const placeOrder = (token, subtotal) => (dispatch, getState) => {
 
     axios.post("/api/orders/placeorder/", { token, subtotal, currentUser, cartItems }).then(res => {
         dispatch({ type: "PLACE_ORDER_SUCCESS" })
-        console.log(token);
+        console.log(res);
     }).catch(err => {
         dispatch({ type: "PLACE_ORDER_ERROR" })
     })
@@ -39,6 +39,20 @@ export const getOrdersByUserId = () => (dispatch, getState) => {
         })
         .catch(err => {
             dispatch({ type: 'GET_ORDERSBYUSERID_ERROR', payload: err })
+
+        })
+}
+
+export const getOrderById = (orderid) => (dispatch, getState) => {
+    dispatch({ type: 'GET_ORDERBYID_REQUEST' })
+
+    axios.post("/api/orders/getorderbyid/", { orderid: orderid })
+        .then(res => {
+            dispatch({ type: 'GET_ORDERBYID_SUCCESS', payload: res.data })
+            console.log(res.data);
+        })
+        .catch(err => {
+            dispatch({ type: 'GET_ORDERBYID_ERROR', payload: err })
 
         })
 }

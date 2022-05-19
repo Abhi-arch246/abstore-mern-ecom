@@ -70,4 +70,20 @@ router.post('/getordersbyuserid', (req, res) => {
     })
 })
 
+
+router.post('/getorderbyid', (req, res) => {
+    const orderid = req.body.orderid
+
+    Order.find({ _id: orderid }, (err, docs) => {
+
+        if (err) {
+            res.error('Something went wrong')
+        } else {
+            res.send(docs[0])
+        }
+
+    })
+})
+
+
 module.exports = router
