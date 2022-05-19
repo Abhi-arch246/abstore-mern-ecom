@@ -18,6 +18,7 @@ function Navbar() {
                             <Link className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1"></i>Home</Link>
                         </li>
 
+
                         {currentUser ? (
                             <>
                                 <li className="nav-item ">
@@ -25,10 +26,6 @@ function Navbar() {
                                 </li>
                                 <li className="nav-item" style={{ marginLeft: "10px" }}>
                                     <Link className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1"></i>{currentUser.name}</Link>
-                                </li>
-                                <li className="nav-item" style={{ marginLeft: "10px" }}>
-                                    <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
-                                    </Link>
                                 </li>
                             </>
 
@@ -38,6 +35,10 @@ function Navbar() {
                                 <Link className="nav-link text-white bg-dark" style={{ marginLeft: "10px", borderRadius: "5px" }} to="/login">Login</Link>
                             </li>
                         )}
+                        <li className="nav-item" style={{ marginLeft: "10px" }}>
+                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
+                            </Link>
+                        </li>
 
                     </ul>
                 </div>

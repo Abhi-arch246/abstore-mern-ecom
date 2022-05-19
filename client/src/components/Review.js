@@ -11,38 +11,43 @@ function Review({ product }) {
     const dispatch = useDispatch()
 
     const submitReview = () => {
-
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-        var reviewExists;
-        for (var i = 0; i < product.reviews.length; i++) {
-            if (product.reviews[i].userid == currentUser._id)
-                reviewExists = true;
-        }
-
-        if (reviewExists) {
-            toast.error("Item Already reviewed can't review again!!", {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2500,
-                theme: "colored"
-            });
-        } else {
-            const review = {
-                rating: rating,
-                comment: comment
+        if (localStorage.getItem('currentUser')) {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+            var reviewExists;
+            for (var i = 0; i < product.reviews.length; i++) {
+                if (product.reviews[i].userid == currentUser._id)
+                    reviewExists = true;
             }
-            dispatch(addProductReview(review, product._id))
-            toast.success("Item reviewed successfully!", {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2500,
-                theme: "colored"
-            });
+
+            if (reviewExists) {
+                toast.error("Item Already reviewed can't review again!!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2500,
+                    theme: "colored"
+                });
+            } else {
+                const review = {
+                    rating: rating,
+                    comment: comment
+                }
+                dispatch(addProductReview(review, product._id))
+
+                toast.success("Item reviewed successfully!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2500,
+                    theme: "colored"
+                });
+            }
+        } else {
+            window.location.href = '/login'
         }
+
 
     }
 
     return (
         <div>
-            <h3 className='text-center'>Reviews Section</h3>
+            <h3 className='mt-5 text-center'>Reviews Section</h3>
             <br />
             <h4>Give your review</h4>
             <br />
@@ -63,26 +68,30 @@ function Review({ product }) {
             <br />
             <br />
             <h4 className='my-4'>All Reviews</h4>
-            {
-                product.reviews.length > 0 ? (
-                    product.reviews.map(review => {
-                        return <div>
-                            <p>{review.name}</p>
-                            <Rating
-                                style={{ color: 'orange' }}
-                                initialRating={review.rating}
-                                fullSymbol="fa-solid fa-star"
-                                emptySymbol="fa-regular fa-star"
-                                readonly
-                            />
-                            <p>{review.comment}</p>
-                        </div>
+            <div className='mb-5'>
 
-                    })
-                ) : (
-                    <p>No reviews yet.</p>
-                )
-            }
+                {/* {
+                    product.reviews.length > 0 ? (
+                        product.reviews.map(review => {
+                            return <div>
+                                <p>{review.name}</p>
+                                <Rating
+                                    style={{ color: 'orange' }}
+                                    initialRating={review.rating}
+                                    fullSymbol="fa-solid fa-star"
+                                    emptySymbol="fa-regular fa-star"
+                                    readonly
+                                />
+                                <p>{review.comment}</p>
+                            </div>
+
+                        })
+                    ) : (
+                        <p>No reviews yet.</p>
+                    )
+                } */}
+            </div>
+
             <ToastContainer />
 
         </div>

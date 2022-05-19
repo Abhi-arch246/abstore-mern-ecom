@@ -10,6 +10,12 @@ function Checkout({ amount }) {
         console.log(token);
         dispatch(placeOrder(token, amount))
     }
+
+    const validateUser = () => {
+        if (!localStorage.getItem('currentUser')) {
+            window.location.href = '/login'
+        }
+    }
     return (
         <div>
             <StripeCheckout
@@ -21,7 +27,7 @@ function Checkout({ amount }) {
                 stripeKey='pk_test_51KyfVaSJLir7fHVulZxhHssma3gmCzeGzOuavMBhjZjp3ExF4pMdH1HfZRmSJwIsgC6M1kkXLPl2dfz9EIqUFPrv00b8fuTkPj'
 
             >
-                <button className='btn btn-dark m-5'>Checkout</button>
+                <button onClick={validateUser} className='btn btn-dark m-5'>Checkout</button>
 
             </StripeCheckout>
 

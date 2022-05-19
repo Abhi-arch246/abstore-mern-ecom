@@ -5,6 +5,7 @@ import { getProductById } from '../actions/productAction'
 import { addToCart } from '../actions/cartAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Rating from 'react-rating'
 import Review from '../components/Review'
 
 function ProductDesc() {
@@ -44,7 +45,15 @@ function ProductDesc() {
                             <div className="mt-4">
                                 <h4>Price: {product.price}</h4>
                                 <br />
-                                <h4>Select Quantity</h4>
+                                <h4>Rating: {product.rating}</h4>
+                                <Rating
+                                    style={{ color: 'orange' }}
+                                    initialRating={product.rating}
+                                    readonly={true}
+                                    fullSymbol="fa-solid fa-star"
+                                    emptySymbol="fa-regular fa-star"
+                                />
+                                <h4 className='mt-3'>Select Quantity</h4>
                                 <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
                                     {[...Array(product.countInStock).keys()].map((c, i) => {
                                         return <option value={i + 1}>{i + 1}</option>
@@ -52,7 +61,7 @@ function ProductDesc() {
 
                                 </select>
                                 <br />
-                                <button className='btn btn-dark mt-4' onClick={addtocart}>Add to Cart</button>
+                                <button className='btn btn-dark mt-5' onClick={addtocart}>Add to Cart</button>
                             </div>
                             <Review product={product} />
 
