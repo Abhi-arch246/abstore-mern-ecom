@@ -70,7 +70,7 @@ function Review({ product }) {
             <h4 className='my-4'>All Reviews</h4>
             <div className='mb-5'>
 
-                {
+                {/* {
                     product.reviews.length > 0 ? (
                         product.reviews.map(review => {
                             return <div>
@@ -89,7 +89,7 @@ function Review({ product }) {
                     ) : (
                         <p>No reviews yet.</p>
                     )
-                }
+                } */}
             </div>
 
             <ToastContainer />
