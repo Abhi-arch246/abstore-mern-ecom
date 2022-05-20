@@ -70,8 +70,8 @@ function Review({ product }) {
             <h4 className='my-4'>All Reviews</h4>
             <div className='mb-5'>
 
-            
-                if(product.reviews.length > 0)
+
+                if(product.reviews.length &gt 0)
                 {
                     product.reviews.map(review => {
                         return <div>
