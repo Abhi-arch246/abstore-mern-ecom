@@ -70,26 +70,28 @@ function Review({ product }) {
             <h4 className='my-4'>All Reviews</h4>
             <div className='mb-5'>
 
+            
+                if(product.reviews.length > 0)
                 {
-                    product.reviews.length > 0 ? (
-                        product.reviews.map(review => {
-                            return <div>
-                                <p>{review.name}</p>
-                                <Rating
-                                    style={{ color: 'orange' }}
-                                    initialRating={review.rating}
-                                    fullSymbol="fa-solid fa-star"
-                                    emptySymbol="fa-regular fa-star"
-                                    readonly
-                                />
-                                <p>{review.comment}</p>
-                            </div>
+                    product.reviews.map(review => {
+                        return <div>
+                            <p>{review.name}</p>
+                            <Rating
+                                style={{ color: 'orange' }}
+                                initialRating={review.rating}
+                                fullSymbol="fa-solid fa-star"
+                                emptySymbol="fa-regular fa-star"
+                                readonly
+                            />
+                            <p>{review.comment}</p>
+                        </div>
 
-                        })
-                    ) : (
-                        <p>No reviews yet.</p>
-                    )
+                    })
+                } else {
+                    <p>No reviews yet.</p>
+
                 }
+
             </div>
 
             <ToastContainer />
