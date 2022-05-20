@@ -71,10 +71,7 @@ function Review({ product }) {
             <div className='mb-5'>
 
                 {
-                    product.reviews.length === 0 ? (
-                        <p>No reviews yet.</p>
-                    ) : (
-
+                    product.reviews && (
                         product.reviews.map(review => {
                             return <div>
                                 <p>{review.name}</p>
