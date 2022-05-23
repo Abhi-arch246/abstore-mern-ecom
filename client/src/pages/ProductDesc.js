@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductById } from '../actions/productAction'
 import { addToCart } from '../actions/cartAction'
@@ -11,6 +11,7 @@ import Review from '../components/Review'
 function ProductDesc() {
     const { id } = useParams()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [quantity, setQuantity] = useState(1)
     const getproductbyidstate = useSelector((state) => state.getAllProductByIdReducer)
     const { loading, product, error } = getproductbyidstate
@@ -36,37 +37,45 @@ function ProductDesc() {
                 : error ? (
                     <h1>something is wrong</h1>
                 ) : (
-                    <div className="row">
-                        <div className="col-md-6 p-4">
-                            <h2 className='p-3'>{product.name}</h2>
-                            <img className='rounded' src={product.image} width="520" height="650" alt="" />
-                        </div>
-                        <div className="col-md-6" style={{ textAlign: 'left' }}>
-                            <div className="mt-4">
-                                <h4>Price: {product.price}</h4>
-                                <br />
-                                <h4>Rating: {product.rating}</h4>
-                                <Rating
-                                    style={{ color: 'orange' }}
-                                    initialRating={product.rating}
-                                    readonly={true}
-                                    fullSymbol="fa-solid fa-star"
-                                    emptySymbol="fa-regular fa-star"
-                                />
-                                <h4 className='mt-3'>Select Quantity</h4>
-                                <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
-                                    {[...Array(product.countInStock).keys()].map((c, i) => {
-                                        return <option value={i + 1}>{i + 1}</option>
-                                    })}
+                    <>
+                        {/* <div className='row' style={{ float: 'left' }}>
 
-                                </select>
-                                <br />
-                                <button className='btn btn-dark mt-5' onClick={addtocart}>Add to Cart</button>
+                            <button onClick={() => navigate(-1)} className='m-3 btn btn-dark'>Back</button>
+                        </div> */}
+
+                        <div className="row">
+
+                            <div className="col-md-5 p-4">
+                                <h2 className='p-3'>{product.name}</h2>
+                                <img className='rounded' src={product.image} width="520" height="650" alt="" />
                             </div>
-                            <Review product={product} />
+                            <div className="col-md-5 mx-3" style={{ textAlign: 'left' }}>
+                                <div className="mt-5">
+                                    <h4>Price: {product.price}</h4>
+                                    <br />
+                                    <h4>Rating: {product.rating}</h4>
+                                    <Rating
+                                        style={{ color: 'orange' }}
+                                        initialRating={product.rating}
+                                        readonly={true}
+                                        fullSymbol="fa-solid fa-star"
+                                        emptySymbol="fa-regular fa-star"
+                                    />
+                                    <h4 className='mt-3'>Select Quantity</h4>
+                                    <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
+                                        {[...Array(product.countInStock).keys()].map((c, i) => {
+                                            return <option value={i + 1}>{i + 1}</option>
+                                        })}
 
+                                    </select>
+                                    <br />
+                                    <button className='btn btn-dark mt-5' onClick={addtocart}>Add to Cart</button>
+                                </div>
+                                <Review product={product} />
+
+                            </div>
                         </div>
-                    </div>
+                    </>
                 )
             }
             <ToastContainer />
