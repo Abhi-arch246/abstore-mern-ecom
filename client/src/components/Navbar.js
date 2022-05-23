@@ -15,28 +15,28 @@ function Navbar() {
                 <div className="menu-link pt-2">
                     <ul>
                         <li className="nav-item ">
-                            <NavLink className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1" activeClassName="active-link"></i>Home</NavLink>
+                            <NavLink className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1"></i>Home</NavLink>
                         </li>
 
 
                         {currentUser ? (
                             <>
                                 <li className="nav-item ">
-                                    <NavLink className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1" activeClassName="active-link"></i>Orders</NavLink>
+                                    <NavLink className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1"></i>Orders</NavLink>
                                 </li>
                                 <li className="nav-item" style={{ marginLeft: "10px" }}>
-                                    <NavLink className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1" activeClassName="active-link"></i>{currentUser.name}</NavLink>
+                                    <NavLink className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1"></i>{currentUser.name}</NavLink>
                                 </li>
                             </>
 
 
                         ) : (
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" style={{ marginLeft: "10px" }} to="/login" activeClassName="active-link">Login</NavLink>
+                                <NavLink className="nav-link text-white" style={{ marginLeft: "10px" }} to="/login">Login</NavLink>
                             </li>
                         )}
                         <li className="nav-item" style={{ marginLeft: "10px" }}>
-                            <NavLink className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping" activeClassName="active-link"></i>{cartItems.length}
+                            <NavLink className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping" ></i>{cartItems.length}
                             </NavLink>
                         </li>
 
