@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 function Navbar() {
     const cartreducer = useSelector(state => state.cartReducer)
@@ -10,34 +10,34 @@ function Navbar() {
 
             <nav className='bgcolor box-shadow'>
                 <div className="logo">
-                    <Link className='navbar-brand text-white bold' to="/">Ab Shop</Link>
+                    <NavLink className='navbar-brand text-white bold' to="/">Ab Shop</NavLink>
                 </div>
                 <div className="menu-link pt-2">
                     <ul>
                         <li className="nav-item ">
-                            <Link className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1"></i>Home</Link>
+                            <NavLink className="nav-link text-white" to="/"><i className="fa-solid fa-house p-1" activeClassName="active-link"></i>Home</NavLink>
                         </li>
 
 
                         {currentUser ? (
                             <>
                                 <li className="nav-item ">
-                                    <Link className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1"></i>Orders</Link>
+                                    <NavLink className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1" activeClassName="active-link"></i>Orders</NavLink>
                                 </li>
                                 <li className="nav-item" style={{ marginLeft: "10px" }}>
-                                    <Link className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1"></i>{currentUser.name}</Link>
+                                    <NavLink className="nav-link text-white" to="/user"><i className="fa-solid fa-user p-1" activeClassName="active-link"></i>{currentUser.name}</NavLink>
                                 </li>
                             </>
 
 
                         ) : (
                             <li className="nav-item">
-                                <Link className="nav-link text-white bg-dark" style={{ marginLeft: "10px", borderRadius: "5px" }} to="/login">Login</Link>
+                                <NavLink className="nav-link text-white" style={{ marginLeft: "10px" }} to="/login" activeClassName="active-link">Login</NavLink>
                             </li>
                         )}
                         <li className="nav-item" style={{ marginLeft: "10px" }}>
-                            <Link className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping"></i>{cartItems.length}
-                            </Link>
+                            <NavLink className="nav-link text-white" to="/cart"><i class="fa-solid p-1 fa-cart-shopping" activeClassName="active-link"></i>{cartItems.length}
+                            </NavLink>
                         </li>
 
                     </ul>

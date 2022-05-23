@@ -64,10 +64,6 @@ function Register() {
                 </div>
                 <ToastContainer />
             </div>
-            <footer className='p-3 text-white'>
-                <h5>Made with ❤️ @Abhishek</h5>
-
-            </footer>
         </div>
     )
 }

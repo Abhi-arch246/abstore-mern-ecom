@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './Login.css'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../actions/userAction'
@@ -18,19 +17,18 @@ function Login() {
             pass: pass
         }
         dispatch(loginUser(user))
-
-
     }
 
     useEffect(() => {
         if (localStorage.getItem('currentUser'))
             window.location.href = '/'
     }, [])
+
     return (
-        <div className='row bgcolor px-5 pt-5'>
+        <div className='row bgcolor pt-4'>
             <h2 className='text-white pb-1'>Welcome to trending E-commerce</h2>
             <div className="col-md-6 text-center py-4">
-                <img className='img-class img-fuild' src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=996&t=st=1651744935~exp=1651745535~hmac=d4f6d78ec33831fc619d1d3eee3555a57f64a8ac5e700f2a0c17cc4942d50d2d" alt="" />
+                <img className="img-fuild img-class rounded" src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=996&t=st=1651744935~exp=1651745535~hmac=d4f6d78ec33831fc619d1d3eee3555a57f64a8ac5e700f2a0c17cc4942d50d2d" alt="" />
             </div>
             <div className="col-md-4 py-5 mt-3">
                 <div className="card p-2 bg-white">
@@ -67,10 +65,7 @@ function Login() {
                 </div>
                 <ToastContainer />
             </div>
-            <footer className='p-3 text-white'>
-                <h5>Made with ❤️ @Abhishek</h5>
 
-            </footer>
         </div>
     )
 }
