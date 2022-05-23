@@ -31,7 +31,7 @@ function Login() {
                 <img className="img-fuild img-class rounded" src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=996&t=st=1651744935~exp=1651745535~hmac=d4f6d78ec33831fc619d1d3eee3555a57f64a8ac5e700f2a0c17cc4942d50d2d" alt="" />
             </div>
             <div className="col-md-4 py-5 mt-3">
-                <div className="card p-2  mx-2 bg-white">
+                <div className="card p-3 mx-2 bg-white">
                     <h2 className='mt-2' style={{ textAlign: "left", marginLeft: "40px" }}>Login</h2>
                     {error && (
                         toast.error("Error Notification !", {

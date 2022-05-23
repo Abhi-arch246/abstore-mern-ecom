@@ -34,6 +34,10 @@ li:hover {
   border-radius: 5px;
 }
 
+.active {
+  background-color: #F24C4C;
+  border-radius: 5px;
+}
 
 .bgcolor {
   background-color: #541690 !important;
@@ -54,7 +58,7 @@ li:hover {
 
 .img-class {
   width: 700px !important;
-  height: 450px !important;
+  height: 480px !important;
   border-radius: 5%;
 }
 
@@ -77,17 +81,20 @@ li:hover {
   transition-timing-function: ease-in;
 }
 
+ol,
+ul {
+  padding-left: 0 !important;
+}
+
 .btn_color:hover {
   background-color: #F24C4C;
 }
 
-.active-link {
-  background-color: #F24C4C;
-}
+
 
 @media screen and (max-width: 768px) {
   .img-class {
-    width: 600px !important;
+    width: 550px !important;
     height: 350px !important;
     border-radius: 5%;
   }

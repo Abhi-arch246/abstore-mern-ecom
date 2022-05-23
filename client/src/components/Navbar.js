@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 function Navbar() {
     const cartreducer = useSelector(state => state.cartReducer)
@@ -10,7 +10,7 @@ function Navbar() {
 
             <nav className='bgcolor box-shadow'>
                 <div className="logo">
-                    <NavLink className='navbar-brand text-white bold' to="/">Ab Shop</NavLink>
+                    <Link className='navbar-brand text-white bold' to="/">Ab Shop</Link>
                 </div>
                 <div className="menu-link pt-2">
                     <ul>
@@ -21,7 +21,7 @@ function Navbar() {
 
                         {currentUser ? (
                             <>
-                                <li className="nav-item ">
+                                <li className="nav-item " style={{ marginLeft: "10px" }}>
                                     <NavLink className="nav-link text-white" to="/orders"><i className="fa-solid fa-box p-1"></i>Orders</NavLink>
                                 </li>
                                 <li className="nav-item" style={{ marginLeft: "10px" }}>

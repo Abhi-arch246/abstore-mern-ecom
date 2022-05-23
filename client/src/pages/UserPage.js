@@ -57,7 +57,7 @@ function Profile() {
                 <div className="row">
 
                     <div className="col-md-7">
-                        <img src={user2} alt="" width="700" height="600" />
+                        <img src={user2} alt="" className='img-fluid rounded img-class' />
                     </div>
                     <div className="col-md-5 mb-4">
                         <div className="card p-2 bg-white">
