@@ -90,6 +90,10 @@ ul {
   background-color: #F24C4C;
 }
 
+.table-responsive {
+  max-height: 300px;
+}
+
 
 
 @media screen and (max-width: 768px) {

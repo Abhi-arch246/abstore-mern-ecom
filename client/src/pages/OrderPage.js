@@ -18,16 +18,19 @@ function OrderPage() {
     }, [dispatch])
     return (
         <div>
+            <h3 className='my-5'>Orders Section</h3>
             <div className="row justify-content-center">
-                <h3 className='my-5'>Orders Section</h3>
-                <div className="col-md-8">
-                    <table className='table table-hover table-responsive-sm'>
-                        <thead>
-                            <th scope='col'>Amount</th>
-                            <th scope='col'>Order ID</th>
-                            <th scope='col'>Date</th>
-                            <th scope='col'>Transaction ID</th>
-                            <th scope='col'>Status</th>
+                <div className="col-md-10">
+                    <table className='table table-hover table-stripped table-responsive' style={{ overflowX: 'auto' }}>
+                        <thead className='thead-dark'>
+                            <tr>
+                                <th scope='col'>Amount</th>
+                                <th scope='col'>Order ID</th>
+                                <th scope='col'>Date</th>
+                                <th scope='col'>Transaction ID</th>
+                                <th scope='col'>Status</th>
+                            </tr>
+
                         </thead>
                         <tbody>
                             {loading && <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" />}
