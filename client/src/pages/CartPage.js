@@ -4,7 +4,7 @@ import { addToCart, deleteItem } from '../actions/cartAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from '../components/Checkout';
-
+import cart from '../assets/cart.png'
 function CartPage() {
     const cartreducerstate = useSelector(state => state.cartReducer)
     const { cartItems } = cartreducerstate
@@ -56,6 +56,7 @@ function CartPage() {
                     <h2 className='mt-5'>Subtotal: {subtotal}</h2>
                     <Checkout amount={subtotal} />
                 </div>
+                <img src={cart} className="img-fluid img-class my-2" />
             </div>
             <ToastContainer />
         </div>

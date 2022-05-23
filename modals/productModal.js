@@ -14,7 +14,8 @@ const ratingSchema = mongoose.Schema({
     rating: {
         type: Number,
         require: true
-    }
+    },
+    default: []
 }, {
     timeStamps: true
 })

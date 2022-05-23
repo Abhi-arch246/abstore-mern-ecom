@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrdersByUserId } from '../actions/orderAction'
-
+import order from '../assets/order.png'
 function OrderPage() {
 
     const orderstate = useSelector(state => state.getOrdersByUserIdReducer)
@@ -46,6 +46,7 @@ function OrderPage() {
                     </table>
 
                 </div>
+                <img src={order} className="my-2 img-fluid img-class" alt="" />
             </div>
         </div >
     )
