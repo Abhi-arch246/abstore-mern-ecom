@@ -30,7 +30,7 @@ function CartPage() {
                             {cartItems.map(item => {
                                 return <tr>
                                     <td>{item.name}</td>
-                                    <td>{item.price}</td>
+                                    <td>{item.price}/-</td>
                                     <td>
                                         <select value={item.quantity} onChange={(e) => dispatch(addToCart(item, e.target.value))}>
                                             {[...Array(item.countInStock).keys()].map((x, i) => {
@@ -53,10 +53,10 @@ function CartPage() {
 
                     </table>
 
-                    <h2 className='mt-5'>Subtotal: {subtotal}</h2>
+                    <h2 className='mt-5'>Subtotal: {subtotal}/-</h2>
                     <Checkout amount={subtotal} />
                 </div>
-                <img src={cart} className="img-fluid img-class my-2" />
+                <img src={cart} className="img-fluid img-class my-1" />
             </div>
             <ToastContainer />
         </div>
