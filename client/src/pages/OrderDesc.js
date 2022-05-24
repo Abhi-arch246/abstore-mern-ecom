@@ -20,7 +20,7 @@ function OrderDesc() {
 
             {loading && <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" />}
             {order && (
-                <div>
+                <div className='px-3'>
                     <div className="row justify-content-center my-5">
                         <div className="col-md-5 card p-1" style={{ textAlign: 'left' }}>
                             <h2 className='text-center mt-2'> <b> Items in your order</b></h2>
@@ -55,7 +55,7 @@ function OrderDesc() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-8 my-4" style={{ textAlign: 'left', marginLeft: '120px' }}>
+                        <div className="col-md-8 my-4" style={{ textAlign: 'left' }}>
                             <h3 className='mb-4'><b>Replacement Policy : </b></h3>
                             <br />
                             <h5><b>1. Which items are eligible for a Free Replacement?</b> </h5>
