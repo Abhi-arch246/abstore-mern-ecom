@@ -23,10 +23,9 @@ function OrderDesc() {
                 <div className='px-3'>
                     <div className="row justify-content-center my-5">
                         <div className="col-md-5 card p-1" style={{ textAlign: 'left' }}>
-                            <h2 className='text-center mt-2'> <b> Items in your order</b></h2>
-                            <hr />
+                            <h2 style={{ backgroundColor: '#F24C4C' }} className='text-center py-3'> <b> Items in your order</b></h2>
                             {order.orderItems.map(item => {
-                                return <div>
+                                return <div className='mt-4'>
                                     <h5> Item {++num} : <b> {item.name}</b></h5>
                                     <h5>Quantity : <b>{item.quantity}</b> </h5>
                                     <h5>Price : <b> {item.quantity} x {item.price}= {item.quantity * item.price}/-</b></h5>
@@ -35,26 +34,24 @@ function OrderDesc() {
                             })}
                         </div>
                         <div className="col-md-5 card mx-3" style={{ textAlign: 'right' }}>
-                            <h2 className='my-2 text-center'> <b> Order Details</b></h2>
-                            <hr />
-                            <h5>Order id : <b> {order._id}</b></h5>
+                            <h2 style={{ backgroundColor: '#F24C4C' }} className='py-3 text-center'> <b> Order Details</b></h2>
+                            <h5 className='mt-4'>Order id : <b> {order._id}</b></h5>
                             <h5>Total Amount : <b>{order.orderAmount}/-</b></h5>
                             <h5>Date of Order : <b>{order.createdAt.substring(0, 10)}</b></h5>
                             <h5>Transaction Id : <b>{order.transactionId}</b> </h5>
                             {order.isDelivered ? (<h5>Order Status : <b>Order Delivered</b> </h5>) : (<h5>Order Status : <b>Order Placed</b> </h5>)}
-                            <hr />
                             <div>
-                                <h2 className='my-2 text-center'><b>Shipping Details</b></h2>
-                                <hr />
-                                <h5>Name : <b>{order.name}</b></h5>
+                                <br />
+                                <h2 style={{ backgroundColor: '#F24C4C' }} className='py-3 text-center'><b>Shipping Details</b></h2>
+                                <h5 className='mt-4'>Name : <b>{order.name}</b></h5>
                                 <h5>Address : <b>{order.shippingAddress.address}</b></h5>
                                 <h5>City : <b>{order.shippingAddress.city}</b></h5>
                                 <h5>Pin Code : <b>{order.shippingAddress.postalCode}</b></h5>
-                                <h5>Country : <b>{order.shippingAddress.country}</b></h5>
+                                <h5 className='mb-4'>Country : <b>{order.shippingAddress.country}</b></h5>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="container">
                         <div className="col-md-8 my-4" style={{ textAlign: 'left' }}>
                             <h3 className='mb-4'><b>Replacement Policy : </b></h3>
                             <br />
