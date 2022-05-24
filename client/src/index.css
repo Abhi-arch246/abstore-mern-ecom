@@ -98,8 +98,8 @@ ul {
 
 @media screen and (max-width: 768px) {
   .img-class {
-    width: 550px !important;
-    height: 350px !important;
+    width: 450px !important;
+    height: 550px !important;
     border-radius: 5%;
   }
 }

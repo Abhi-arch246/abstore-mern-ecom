@@ -38,16 +38,16 @@ function ProductDesc() {
                     <h1>something is wrong</h1>
                 ) : (
                     <>
-                        {/* <div className='row' style={{ float: 'left' }}>
+                        <div className='row' style={{ float: 'left' }}>
 
                             <button onClick={() => navigate(-1)} className='m-3 btn btn-dark'>Back</button>
-                        </div> */}
+                        </div>
 
                         <div className="row">
 
                             <div className="col-md-5 p-4">
                                 <h2 className='p-3'>{product.name}</h2>
-                                <img className='rounded' src={product.image} width="480" height="650" alt="" />
+                                <img className='rounded img-fluid' src={product.image} alt="" />
                             </div>
                             <div className="col-md-5 mx-3" style={{ textAlign: 'left' }}>
                                 <div className="mt-5">

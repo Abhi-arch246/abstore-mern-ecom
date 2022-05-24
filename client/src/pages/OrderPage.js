@@ -20,32 +20,29 @@ function OrderPage() {
         <div>
             <h3 className='my-5'>Orders Section</h3>
             <div className="row justify-content-center">
-                <div className="col-md-10">
-                    <table className='table table-hover table-stripped table-responsive' style={{ overflowX: 'auto' }}>
+                <div className="col-md-8 table-responsive">
+                    <table className='table table-hover  table-stripped'>
                         <thead className='thead-dark'>
                             <tr>
-                                <th scope='col'>Amount</th>
                                 <th scope='col'>Order ID</th>
+                                <th scope='col'>Total Amount</th>
                                 <th scope='col'>Date</th>
                                 <th scope='col'>Transaction ID</th>
                                 <th scope='col'>Status</th>
                             </tr>
-
                         </thead>
                         <tbody>
-                            {loading && <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" />}
                             {orders && orders.map(order => {
                                 return <tr style={{ cursor: 'pointer' }} onClick={() => window.location = `/orderdesc/${order._id}`}>
                                     <td>{order._id}</td>
-                                    <td>{order.orderAmount}</td>
+                                    <td>{order.orderAmount}/-</td>
                                     <td>{order.createdAt.substring(0, 10)}</td>
                                     <td>{order.transactionId}</td>
                                     <td>{order.isDelivered ? (<li>Delivered</li>) : (<li>Order Placed</li>)}</td>
                                 </tr>
-
                             })}
-                            {error && <h2>Something went wrong...</h2>}
                         </tbody>
+
                     </table>
 
                 </div>
