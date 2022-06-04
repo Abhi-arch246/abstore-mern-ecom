@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../actions/userAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function Login() {
+    const navigate = useNavigate()
     const loginreducer = useSelector(state => state.loginUserReducer)
     const { success, error } = loginreducer
     const [email, setemail] = useState('')
@@ -21,7 +22,7 @@ function Login() {
 
     useEffect(() => {
         if (localStorage.getItem('currentUser'))
-            window.location.href = '/'
+            navigate('/')
     }, [])
 
     return (

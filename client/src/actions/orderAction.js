@@ -36,6 +36,7 @@ export const getOrdersByUserId = () => (dispatch, getState) => {
         .then(res => {
             dispatch({ type: 'GET_ORDERSBYUSERID_SUCCESS', payload: res.data })
             console.log(res.data);
+            console.log(userid);
         })
         .catch(err => {
             dispatch({ type: 'GET_ORDERSBYUSERID_ERROR', payload: err })

@@ -59,7 +59,7 @@ router.post('/placeorder', async (req, res) => {
 router.post('/getordersbyuserid', (req, res) => {
     const userid = req.body.userid
 
-    Order.find({ userid: userid }, (err, docs) => {
+    Order.find({ userId: userid }, (err, docs) => {
 
         if (err) {
             res.error('Something went wrong')

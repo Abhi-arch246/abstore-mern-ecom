@@ -71,7 +71,9 @@ function Review({ product }) {
             <div className='mb-5'>
 
                 {
-                    product.reviews ? (
+                    !product.reviews ? (
+                        <p>No Reviews yet!</p>
+                    ) : (
                         product.reviews.map(review => {
                             return <div>
                                 <p>{review.name}</p>
@@ -86,8 +88,6 @@ function Review({ product }) {
                             </div>
 
                         })
-                    ) : (
-                        <p>No reviews yet</p>
                     )
 
                 }

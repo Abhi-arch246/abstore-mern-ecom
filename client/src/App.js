@@ -13,8 +13,11 @@ import Register from './pages/Register';
 import UserPage from './pages/UserPage'
 import OrderPage from './pages/OrderPage';
 import OrderDesc from './pages/OrderDesc';
-
-
+import AdminPage from './admin/AdminPage';
+import UserList from './admin/UserList';
+import ProductList from './admin/ProductList';
+import OrderList from './admin/OrderList';
+import AddNew from './admin/AddNew';
 function App() {
   return (
     <div className="App">
@@ -30,6 +33,11 @@ function App() {
           <Route path='/user' element={<UserPage />} />
           <Route path='/orders' element={<OrderPage />} />
           <Route path='/orderdesc/:orderid' element={<OrderDesc />} />
+          <Route path='/admin' element={<AdminPage />} />
+          <Route path="/admin/userlist" element={<UserList />} />
+          <Route path="/admin/productlist" element={<ProductList />} />
+          <Route path="/admin/orderlist" element={<OrderList />} />
+          <Route path="/admin/addnew" element={<AddNew />} />
         </Routes>
         <Footer />
       </Router>

@@ -21,7 +21,7 @@ function OrderPage() {
             <h3 className='my-5'>Orders Section</h3>
             <div className="row justify-content-center">
                 <div className="col-md-8 table-responsive">
-                    <table className='table table-hover  table-stripped'>
+                    <table className='table table-hover table-stripped'>
                         <thead className='thead-dark'>
                             <tr>
                                 <th scope='col'>Order ID</th>
@@ -32,7 +32,9 @@ function OrderPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {orders && orders.map(order => {
+                            {!orders ? (
+                                <p>NO orders yet</p>
+                            ) : (orders.map(order => {
                                 return <tr style={{ cursor: 'pointer' }} onClick={() => window.location = `/orderdesc/${order._id}`}>
                                     <td>{order._id}</td>
                                     <td>{order.orderAmount}/-</td>
@@ -40,7 +42,7 @@ function OrderPage() {
                                     <td>{order.transactionId}</td>
                                     <td>{order.isDelivered ? (<li>Delivered</li>) : (<li>Order Placed</li>)}</td>
                                 </tr>
-                            })}
+                            }))}
                         </tbody>
 
                     </table>
