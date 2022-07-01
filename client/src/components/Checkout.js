@@ -9,6 +9,7 @@ function Checkout({ amount }) {
     const tokenhandler = (token) => {
         console.log(token);
         dispatch(placeOrder(token, amount))
+        localStorage.removeItem('cartItems')
     }
 
     const validateUser = () => {
